@@ -5,6 +5,7 @@ public class Battleground {
 	static final int MAX_HEALTH_POINTS = 100;
 	static final int MAX_NUM_ROUNDS = 10;
 	static final int MAX_ATK = 50;
+	static final int MAX_SPEED = 100;
 	
 	/** Minimum attack and defense level; */
 	static final int MIN = 1;
