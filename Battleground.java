@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 public class Battleground {
 
+	static final int MAX_HEALTH_POINTS = 100;
 	static final int MAX_NUM_ROUNDS = 10;
 	static final int MAX_ATK = 50;
 	
@@ -15,7 +16,18 @@ public class Battleground {
 	static Scanner myScan;
 	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method stubz
+		
+		// ask users to build their warriors
+		System.out.println()
+		firstWarrior = buildWarrior();
+		// determine the order of the warriors
+		// start and play game
+		// determine winner
+		// print ending message
+		
+		Warrior myWarrior = buildWarrior();
+		System.out.println(myWarrior);
 	
 	}
 	
@@ -42,12 +54,28 @@ public class Battleground {
 				isValid = true;
 			} 
 		}
+		
+		isValid = false;
+		while (!isValid) {
+			System.out.println("Set your speed to an integer between 1 and 100 \n" +
+							"Your healthPoints will be (100 - speed)");
+			int myInput = myScan.nextInt();
+			
+			if (myInput > MIN && myInput < MAX_HEALTH_POINTS) {
+				myWarrior.setSpeed(myInput);
+				myWarrior.setHealthPoints(MAX_HEALTH_POINTS - myInput);
+				isValid = true;
+			}
+		}
+		
 		return myWarrior;
 	}
 	
 	public static void determineOrder() {
 		
 	}
+	
+	
 	public static void determineWinner() {
 		
 	}
