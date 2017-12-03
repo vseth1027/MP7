@@ -11,6 +11,10 @@ public class Battleground {
 	
 	static final int MAX_DEF = 23;
 	
+	static Warrior firstWarrior;
+	static Warrior secondWarrior;
+	static Scanner myScan;
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
@@ -22,6 +26,15 @@ public class Battleground {
 	 */
 	public Warrior buildWarrior() {
 		return null;
+	}
+	public static void determineOrder() {
+		
+	}
+	public static void determineWinner() {
+		
+	}
+	public static void initializeWarrior() {
+		
 	}
 
 }
