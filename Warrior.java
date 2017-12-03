@@ -57,12 +57,12 @@ public class Warrior {
 	}
 
 	public boolean attack(final Warrior opponent) {
-		if (this.defenseLevel > opponent.attackLevel) {
-			this.defenseLevel -= DEFENSE_DAMAGE;
+		if (opponent.defenseLevel > this.attackLevel) {
+			opponent.defenseLevel -= DEFENSE_DAMAGE;
 			return false;
 		}
 		
-		this.healthPoints -= opponent.attackLevel - this.defenseLevel;
+		opponent.healthPoints -= this.attackLevel - opponent.defenseLevel;
 		return true; 		
 	}
 	
