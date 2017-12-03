@@ -23,13 +23,40 @@ public class Battleground {
 		firstWarrior = buildWarrior();
 		
 		System.out.println("Player 2, build your warrior.");
-		// determine the order of the warriors
-		// start and play game
-		// determine winner
-		// print ending message
+		secondWarrior = buildWarrior();
 		
-		Warrior myWarrior = buildWarrior();
-		System.out.println(myWarrior);
+		// determine the order of the warriors
+		int speed1 = firstWarrior.getSpeed();
+		int speed2 = secondWarrior.getSpeed();
+		if (speed1 < speed2) {			
+			Warrior temp = firstWarrior;		//switch the two warriors
+			firstWarrior = secondWarrior;
+			secondWarrior = temp;
+		}
+		
+		// start and play game
+		boolean isWinner = false;
+		for (int i = 0; i < MAX_NUM_ROUNDS && !isWinner; i++) {
+			if (i % 2 == 0) {
+				firstWarrior.attack(secondWarrior);
+				if(determineWinner() != null) {
+					isWinner = true;
+					break;
+				}
+			}
+			
+			if (i % 2 == 1) {
+				secondWarrior.attack(firstWarrior);
+				if(determineWinner() != null) {
+					isWinner = true;
+					break;
+				}
+			}
+			
+		}
+		
+		// determine winner
+		System.out.println("The winner is " + determineWinner().getName());
 	
 	}
 	
