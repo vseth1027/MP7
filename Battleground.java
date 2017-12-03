@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Battleground {
 
-	static final int MAX_HIT_POINTS = 50; 
+	static final int MAX_HEALTH_POINTS = 50; 
 	static final int MAX_NUM_ROUNDS = 10;
 	static final int MAX_ATK = 49;
 	
