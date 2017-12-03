@@ -1,11 +1,11 @@
 
 public class Warrior {
  
-	private String name;
-	private int healthPoints;
-	private int attackLevel;
-	private int defenseLevel;
-	private int speed;
+	protected String name;
+	protected int healthPoints;
+	protected int attackLevel;
+	protected int defenseLevel;
+	protected int speed;
 	static int DEFENSE_DAMAGE = 5;
 	
 	public Warrior() {
