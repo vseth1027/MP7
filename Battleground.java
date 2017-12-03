@@ -19,8 +19,10 @@ public class Battleground {
 		// TODO Auto-generated method stubz
 		
 		// ask users to build their warriors
-		System.out.println()
+		System.out.println("Player 1, build your warrior.");
 		firstWarrior = buildWarrior();
+		
+		System.out.println("Player 2, build your warrior.");
 		// determine the order of the warriors
 		// start and play game
 		// determine winner
@@ -71,16 +73,18 @@ public class Battleground {
 		return myWarrior;
 	}
 	
-	public static void determineOrder() {
-		
-	}
-	
-	
-	public static void determineWinner() {
-		
-	}
-	public static void initializeWarrior() {
-		
+	/**
+	 * Determines the winner of the game.
+	 * @return the winner of the game, or null if the game isn't over. 
+	 */
+	public static Warrior determineWinner() {
+		if (firstWarrior.getHealthPoints() < 0) {
+			return firstWarrior;
+		}
+		if (secondWarrior.getHealthPoints() < 0) {
+			return secondWarrior;
+		}
+		return null;		
 	}
 
 }
