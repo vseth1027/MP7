@@ -57,7 +57,12 @@ public class Battleground {
 		}
 		
 		// determine winner
-		System.out.println("The winner is " + determineWinner().getName());
+		if (determineWinner() != null) {
+			System.out.println("The winner is " + determineWinner().getName());
+		} else {
+			System.out.println("It's a tie. There is no winner.");
+		}
+		
 	
 	}
 	
