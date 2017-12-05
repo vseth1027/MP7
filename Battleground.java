@@ -56,7 +56,7 @@ public class Battleground {
 			
 		}
 		
-		// determine winner
+		// determine winner and print ending message
 		if (determineWinner() != null) {
 			System.out.println("The winner is " + determineWinner().getName());
 		} else {
