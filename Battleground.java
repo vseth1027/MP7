@@ -73,11 +73,31 @@ public class Battleground {
 	public static Warrior buildWarrior() {
 		myScan = new Scanner(System.in);
 		Warrior myWarrior = new Warrior();
+
+		boolean isValid = false;
+		while (!isValid) {
+			System.out.println("Press 1 for a Cowboy, 2 for a Ninja, or 3 for a Wizard");
+			int input = myScan.nextInt();
+			
+			if (input == 1) {
+				myWarrior = new Cowboy();
+				isValid = true;
+			} else if (input == 2) {
+				myWarrior = new Ninja();
+				isValid = true;
+			} else if (input == 3){
+				myWarrior = new Wizard();
+				isValid = true;
+			} else {
+				System.out.println("Your input is invalid. Please try again.");
+			}
+		}
+		
 		
 		System.out.println("Name your warrior");		
 		myWarrior.setName(myScan.nextLine());		//set warrior name
 		
-		boolean isValid = false;			//set attack and defense levels
+		isValid = false;			//set attack and defense levels
 		while (!isValid) {
 			System.out.println("Set the attackLevel to an integer between 1 and 50 \n" +
 					"Your defenseLevel will be (50 - attackLevel)");
