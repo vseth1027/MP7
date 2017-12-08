@@ -66,6 +66,11 @@ public class Warrior {
 		return true; 		
 	}
 	
+	//for the generic Warrior, the special move attack is the same as the general attack
+	public boolean specialMoveAttack(final Warrior opponent) {
+		return attack(opponent);		
+	}
+	
 	public String toString() {
 		return "The name is " + name + "\nThe attackLevel is " + attackLevel +
 				"\nThe defenseLevel is " + defenseLevel + "\nThe healthPoints are " 
