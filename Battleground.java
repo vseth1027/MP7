@@ -39,7 +39,13 @@ public class Battleground {
 		boolean isWinner = false;
 		for (int i = 0; i < MAX_NUM_ROUNDS && !isWinner; i++) {
 			if (i % 2 == 0) {
-				firstWarrior.attack(secondWarrior);
+				int random = (int)(Math.random()*10);
+				if (random > 0) {
+					firstWarrior.attack(secondWarrior);
+				} else {
+					firstWarrior.specialMoveAttack(secondWarrior);
+				}
+				
 				if(determineWinner() != null) {
 					isWinner = true;
 					break;
@@ -47,7 +53,14 @@ public class Battleground {
 			}
 			
 			if (i % 2 == 1) {
-				secondWarrior.attack(firstWarrior);
+				int random = (int)(Math.random()*10); {
+					if (random > 0) {
+						secondWarrior.attack(firstWarrior);
+					} else {
+						secondWarrior.specialMoveAttack(firstWarrior);
+					}
+				}
+				
 				if(determineWinner() != null) {
 					isWinner = true;
 					break;
@@ -73,7 +86,10 @@ public class Battleground {
 	public static Warrior buildWarrior() {
 		myScan = new Scanner(System.in);
 		Warrior myWarrior = new Warrior();
-
+		
+		System.out.println("Name your warrior");		
+		String name = myScan.nextLine();	//set warrior name
+		
 		boolean isValid = false;
 		while (!isValid) {
 			System.out.println("Press 1 for a Cowboy, 2 for a Ninja, or 3 for a Wizard");
@@ -81,21 +97,21 @@ public class Battleground {
 			
 			if (input == 1) {
 				myWarrior = new Cowboy();
+				myWarrior.setName(name);
 				isValid = true;
 			} else if (input == 2) {
 				myWarrior = new Ninja();
+				myWarrior.setName(name);
 				isValid = true;
 			} else if (input == 3){
 				myWarrior = new Wizard();
+				myWarrior.setName(name);
 				isValid = true;
 			} else {
 				System.out.println("Your input is invalid. Please try again.");
 			}
 		}
 		
-		
-		System.out.println("Name your warrior");		
-		myWarrior.setName(myScan.nextLine());		//set warrior name
 		
 		isValid = false;			//set attack and defense levels
 		while (!isValid) {
