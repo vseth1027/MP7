@@ -38,7 +38,7 @@ public class Battleground {
 		// start and play game
 		boolean isWinner = false;
 		for (int i = 0; i < MAX_NUM_ROUNDS && !isWinner; i++) {
-			if (i % 2 == 0) {
+			if (i % 2 == 0) {						
 				int random = (int)(Math.random()*10);
 				if (random > 0) {
 					firstWarrior.attack(secondWarrior);
@@ -113,7 +113,7 @@ public class Battleground {
 		}
 		
 		
-		isValid = false;			//set attack and defense levels
+		isValid = false;			// set attack and defense levels
 		while (!isValid) {
 			System.out.println("Set the attackLevel to an integer between 1 and 50 \n" +
 					"Your defenseLevel will be (50 - attackLevel)");
@@ -126,7 +126,7 @@ public class Battleground {
 			} 
 		}
 		
-		isValid = false;
+		isValid = false;			// set speed and health points
 		while (!isValid) {
 			System.out.println("Set your speed to an integer between 1 and 100 \n" +
 							"Your healthPoints will be (100 - speed)");
